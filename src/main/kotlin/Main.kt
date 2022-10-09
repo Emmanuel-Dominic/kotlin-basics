@@ -1,7 +1,12 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+fun main() {
+    val name = "Dominic"
+    println("Hello $name")
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+    val numList =  arrayOf(1, 2, 3)
+    var x = 0
+
+    while(x < 3) {
+        println("$x, ${numList[x]}")
+        x += 1
+    }
 }
