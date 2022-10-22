@@ -77,7 +77,26 @@ class Cheetah: Feline() {
     }
 }
 
+class Roamable {
+    var r: Animal = Cheetah()
+
+    fun normal() {
+        if (r is Cheetah){
+            val cheetah = r as Cheetah // Explicit cast
+            println("---cheetah---")
+            cheetah.eat()
+            cheetah.sound()
+            cheetah.roam()
+            cheetah.move()
+            cheetah.sleep()
+            println("")
+        }
+    }
+}
+
 fun main() {
+    val roamable = Roamable()
+    roamable.normal()
     println("---animals---")
     val animals = arrayOf(
         Hippo(), Wolf(), Cheetah(), People()
@@ -88,13 +107,6 @@ fun main() {
         println(animalType)
         println("")
     }
-    println("---cheetah---")
-    val cheetah = Cheetah()
-    cheetah.eat()
-    cheetah.sound()
-    cheetah.roam()
-    cheetah.move()
-    cheetah.sleep()
     println("")
     println("---vehicle---")
     val car = Vehicle()
