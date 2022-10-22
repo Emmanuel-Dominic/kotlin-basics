@@ -2,6 +2,10 @@ interface Move {
     fun move() {
         println("I am moving!")
     }
+
+    fun sound() {
+        println("Talking.")
+    }
 }
 
 class People: Move
@@ -17,7 +21,7 @@ abstract class Animal: Move {
     abstract val habitat: String
     var hunger: Int = 10
 
-    abstract fun sound()
+    abstract override fun sound()
 
     open fun roam() {
         println("The animal is roaming.")
@@ -75,11 +79,13 @@ class Cheetah: Feline() {
 
 fun main() {
     println("---animals---")
-    val animals: Array<Animal> = arrayOf(
-        Hippo(), Wolf(), Cheetah()
+    val animals = arrayOf(
+        Hippo(), Wolf(), Cheetah(), People()
     )
     for(animal in animals){
         animal.sound()
+        val animalType = if (animal is Animal) "Animal" else "Person"
+        println(animalType)
         println("")
     }
     println("---cheetah---")
